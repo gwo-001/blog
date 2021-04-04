@@ -31,4 +31,4 @@ redis:
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.gwo.myblog.mapper
+  type-aliases-package: com.gwo.myblog.mapper/*.xml

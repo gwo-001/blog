@@ -5,8 +5,8 @@ target/
 !**/src/test/**/target/
 
 #忽略测试环境和生产环境的配置文件
-src/main/resources/application-prod.yaml
-src/main/resources/application-test.yaml
+src/main/resources/*.yaml
+src/main/resources/*.yaml
 
 
 ### STS ###

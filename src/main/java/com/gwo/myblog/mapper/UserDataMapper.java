@@ -2,6 +2,7 @@ package com.gwo.myblog.mapper;
 
 import com.gwo.myblog.model.dos.UserDo;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 
 /**
@@ -9,7 +10,7 @@ import org.apache.ibatis.annotations.Mapper;
  */
 
 @Mapper
-
+@Repository
 public interface UserDataMapper {
     Integer insertUserDataToDB(UserDo userDo);
 
