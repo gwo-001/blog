@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -69,8 +70,8 @@ public class SignUpService {
         String verifyCode = ParseUtil.getVerifyCode();
         verificationDo.setEmail(userDo.getEmail());
         verificationDo.setVerificationCode(verifyCode);
-        redisTemplate.boundValueOps(userDo.getEmail()).;
-        redisTemplate.opsForValue().set(userDo.getEmail(),verifyCode);
+        redisTemplate.opsForValue().set(userDo.getEmail(),verifyCode,5*60, TimeUnit.SECONDS);
+
 
 
         // 这里利用邮箱发送验证码来验证是有是邮箱的拥有者来注册的

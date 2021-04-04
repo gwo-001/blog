@@ -2,21 +2,20 @@ package com.gwo.myblog;
 
 import com.gwo.myblog.utils.Md5Util;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 
 @SpringBootTest
 class DemoApplicationTests {
 
+	@Autowired
+	RedisTemplate redisTemplate;
+
 	@Test
 	void contextLoads() {
 
-		String s = "dasdafa";
-		String[] temp = s.split("");
-
-		System.out.println(Md5Util.encodeByMd5(s));
-		for (String s1 : temp) {
-			System.out.println(s1);
-		}
+		redisTemplate.opsForValue().set("testKey","verifyCode");
 
 	}
 

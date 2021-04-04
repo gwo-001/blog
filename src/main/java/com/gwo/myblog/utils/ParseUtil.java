@@ -7,6 +7,10 @@ import java.util.Random;
  */
 public class ParseUtil {
 
+    /**
+     * 此方法用来生成6位随机数验证码
+     * @return
+     */
     public static String getVerifyCode() {
         StringBuilder sb = new StringBuilder();
         Random random = new Random();
