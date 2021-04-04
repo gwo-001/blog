@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @Classname SignUpController
  * @Description 用户注册
  * @Date 2021/3/22 22:13
- * @Created by Gwo(1552571230@qq.com)
+ * @author by Gwo(1552571230@qq.com)
  */
 @Controller
 public class SignUpController {

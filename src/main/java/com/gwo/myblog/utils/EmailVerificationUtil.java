@@ -16,16 +16,16 @@ public class EmailVerificationUtil {
     /**
      * 校验用户的验证码是否正确，以确定是否予以注册
      *
-     * @param user
-     * @param verificationDo
-     * @param customerCode
+     * @param user 用户
+     * @param verificationDo 存在redis中的验证码和邮箱地址
+     * @param customerCode 用户输入的验证码
      * @return 0：验证码错误 1：验证码正确
      */
-    public Integer isVerificationCorrect(UserDo user, VerificationDo verificationDo, String customerCode) {
-        int result = 0;
+    public static boolean isVerificationCorrect(UserDo user, VerificationDo verificationDo, String customerCode) {
+        boolean result = false;
 
         if (user.getEmail().equals(verificationDo.getEmail()) && verificationDo.getVerificationCode().equals(customerCode)) {
-            result = 1;
+            result = true;
         }
 
         return result;
