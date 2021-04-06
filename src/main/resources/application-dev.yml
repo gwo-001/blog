@@ -10,6 +10,7 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     filters: stat
 
+
 redis:
   # redis数据库索引(默认为0)，我们使用索引为3的数据库，避免和其他数据库冲突
   database: 0
