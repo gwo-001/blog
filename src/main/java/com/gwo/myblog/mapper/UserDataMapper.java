@@ -9,8 +9,8 @@ import org.apache.ibatis.annotations.Mapper;
  */
 
 @Mapper
-
 public interface UserDataMapper {
+
     Integer insertUserDataToDB(UserDo userDo);
 
 }
