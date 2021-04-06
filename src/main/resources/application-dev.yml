@@ -1,11 +1,14 @@
 server:
   port: 8080
 
-datasource:
-  url: jdbc:mysql://127.0.0.1:8080/blog_db
-  username: root
-  password: 123456
-  driver-class-name: com.mysql.jdbc.Driver
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/blog_db?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat
 
 redis:
   # redis数据库索引(默认为0)，我们使用索引为3的数据库，避免和其他数据库冲突
@@ -30,5 +33,5 @@ redis:
     max-wait: -1
 
 mybatis:
-  mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.gwo.myblog.mapper/*.xml
+  mapper-locations: classpath:com.gwo.myblog.mapper/*.xml
+  type-aliases-package: com.gwo.myblog.mapper
